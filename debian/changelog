@@ -1,8 +1,8 @@
-voctomix-outcasts (0.3+git20161119-1) UNRELEASED; urgency=medium
+voctomix-outcasts (0.3+git20161119-1) unstable; urgency=medium
 
   * Initial upload. (Closes: #833700)
   * Use arbitrary version number which is higher than 0.3 as CarlFK (upstream)
     hasn't done any release yet but used version numbers for his local
     releases…
 
- -- Holger Levsen <holger@debian.org>  Sat, 19 Nov 2016 17:20:13 +0100
+ -- Holger Levsen <holger@debian.org>  Sat, 19 Nov 2016 19:35:26 +0100
