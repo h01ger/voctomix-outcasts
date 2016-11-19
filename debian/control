@@ -2,7 +2,7 @@ Source: voctomix-outcasts
 Section: video
 Priority: optional
 Maintainer: Holger Levsen <holger@debian.org>
-Build-Depends: debhelper (>=9), python3, dh-python, pandoc
+Build-Depends: debhelper (>=9), python3, dh-python
 Standards-Version: 3.9.8
 Homepage: https://github.com/CarlFK/voctomix-outcasts
 Vcs-Git: git://anonscm.debian.org/collab-maint/voctomix-outcasts.git

@@ -11,14 +11,10 @@ UVER  = $(shell dpkg-parsechangelog -l$(PKD)/changelog | perl -ne 'print $$1 if 
 %:
 	dh $@ --with python3
 
-override_dh_auto_build:
-	pandoc -o voctomix-outcasts.html README.md
-
 override_dh_clean:
 	dh_clean
 	rm -f voctomix-outcasts.html debian/debhelper-build-stamp
 	rm -rf ./lib/__pycache__
-
 
 new-upstream-version: clean
 	mkdir -p $(PKG)-$(UVER)/
