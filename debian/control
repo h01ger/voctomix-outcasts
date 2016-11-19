@@ -1,27 +1,23 @@
 Source: voctomix-outcasts
 Section: video
 Priority: optional
-Maintainer: Carl F. Karsten <carl@nextdayvideo.com>
-Build-Depends: debhelper (>=9), python3, python3:any, dh-python, pandoc
+Maintainer: Holger Levsen <holger@debian.org>
+Build-Depends: debhelper (>=9), python3, dh-python, pandoc
 Standards-Version: 3.9.8
 Homepage: https://github.com/CarlFK/voctomix-outcasts
-# Vcs-Git: git://anonscm.debian.org/collab-maint/voctomix.git
-# Vcs-Browser: https://anonscm.debian.org/git/collab-maint/voctomix.git
-X-Python-Version: >= 3
+Vcs-Git: git://anonscm.debian.org/collab-maint/voctomix-outcasts.git
+Vcs-Browser: https://anonscm.debian.org/git/collab-maint/voctomix-outcasts.git
 
 Package: voctomix-outcasts
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python3:Depends},
- python3,
+Depends: ${misc:Depends}, ${python3:Depends},
  python3-gi,
- gstreamer1.0-plugins-base,
+ gir1.2-gst-plugins-base-1.0,
  gstreamer1.0-plugins-good,
- libgstreamer1.0-0,
- gstreamer1.0-tools
-Suggests: gstreamer1.0-libav,
- gstreamer1.0-plugins-bad,
- gstreamer1.0-plugins-ugly
-Description: Additional files used with Voctomix
+Description: Additional scripts to be used with Voctomix
+ A collection of helper scripts for Voctomix, which have not been included
+ in Voctomix itself.
  .
- This package does not depend on any of Voctomix, it can be installed on a client machine that connects to a 2nd machine running Voctomix-core 
+ This package does not depend on any of Voctomix, as it can be installed on
+ any client machine that connects to a another machine running voctomix-core.
 

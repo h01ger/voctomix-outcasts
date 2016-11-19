@@ -1,0 +1,7 @@
+ingest.py /usr/share/voctomix-outcasts/
+generate-cut-list.py /usr/share/voctomix-outcasts/
+record-mixed-av.sh /usr/share/voctomix-outcasts/
+record-timestamp.sh /usr/share/voctomix-outcasts/
+lib/ /usr/share/voctomix-outcasts/
+tests/ /usr/share/voctomix-outcasts/
+configs/ /usr/share/doc/voctomix-outcasts/examples/

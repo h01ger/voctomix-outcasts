@@ -1,18 +1,8 @@
-voctomix-outcasts (0.3-1ubuntu1) wily; urgency=medium
+voctomix-outcasts (0.3+git20161119-1) UNRELEASED; urgency=medium
 
-  * Add example scripts to OS path
+  * Initial upload. (Closes: #833700)
+  * Use arbitrary version number which is higher than 0.3 as CarlFK (upstream)
+    hasn't done any release yet but used version numbers for his local
+    releases…
 
- -- Carl F Karsten <carl@nextdayvideo.com>  Wed, 18 May 2016 02:47:44 -0500
-
-voctomix-outcasts (0.2-1ubuntu1) xenial; urgency=medium
-
-  * Added scripts and configs from lca
-
- -- Carl F Karsten <carl@nextdayvideo.com>  Thu, 05 May 2016 11:28:30 -0500
-
-voctomix-outcasts (0.1-1) wily; urgency=medium
-
-  * Initial release. 
-
- -- Carl F Karsten <carl@nextdayvideo.com>  Sun, 01 May 2016 21:11:53 -0400
-
+ -- Holger Levsen <holger@debian.org>  Sat, 19 Nov 2016 17:20:13 +0100
