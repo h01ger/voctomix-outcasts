@@ -1,3 +1,9 @@
+voctomix-outcasts (0.3+git20161119-2) UNRELEASED; urgency=medium
+
+  * Correctly attribute Ryan Vermer in debian/copyright. (Closes: #845065)
+
+ -- Holger Levsen <holger@debian.org>  Sun, 20 Nov 2016 11:07:24 +0100
+
 voctomix-outcasts (0.3+git20161119-1) unstable; urgency=medium
 
   * Initial upload. (Closes: #833700)

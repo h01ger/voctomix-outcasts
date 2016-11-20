@@ -2,8 +2,6 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: voctomix-outcasts
 Source: https://github.com/CarlFK/voctomix-outcasts
 
-Files: *
-Copyright: 2015,2016	Carl F. Karsten <carl@nextdayvideo.com>
 License: MIT
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +20,14 @@ License: MIT
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
+
+Files: *
+Copyright: 2015,2016	Carl F. Karsten <carl@nextdayvideo.com>
+License: MIT
+
+Files: ingest.py
+Copyright: 2015,2016	Carl F. Karsten <carl@nextdayvideo.com>, Ryan Verner <ryan@nextdayvideo.com.au>
+License: MIT
 
 Files: debian/*
 Copyright: 2016 Holger Levsen <holger@debian.org>
