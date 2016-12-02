@@ -1,3 +1,9 @@
+voctomix-outcasts (0.3+git20161119-3) UNRELEASED; urgency=medium
+
+  * Use https for Vcs-Git URL.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 01 Dec 2016 21:21:29 -0800
+
 voctomix-outcasts (0.3+git20161119-2) unstable; urgency=medium
 
   * Correctly attribute Ryan Vermer in debian/copyright. (Closes: #845065)
