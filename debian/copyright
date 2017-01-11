@@ -22,15 +22,15 @@ License: Expat
  THE SOFTWARE.
 
 Files: *
-Copyright: 2015,2016	Carl F. Karsten <carl@nextdayvideo.com>
+Copyright: 2015-2017	Carl F. Karsten <carl@nextdayvideo.com>
 License: Expat
 
 Files: ingest.py
-Copyright: 2015,2016	Carl F. Karsten <carl@nextdayvideo.com>, Ryan Verner <ryan@nextdayvideo.com.au>
+Copyright: 2015-2017	Carl F. Karsten <carl@nextdayvideo.com>, Ryan Verner <ryan@nextdayvideo.com.au>
 License: Expat
 
 Files: debian/*
-Copyright: 2016 Holger Levsen <holger@debian.org>
+Copyright: 2016-2017 Holger Levsen <holger@debian.org>
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
