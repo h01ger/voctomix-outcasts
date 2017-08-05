@@ -1,3 +1,10 @@
+voctomix-outcasts (0.4.2-1) unstable; urgency=medium
+
+  * New upstream bugfix release.
+    - PNG sequences should now loop.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 11 Jan 2017 23:16:40 +1100
+
 voctomix-outcasts (0.4.1-1) unstable; urgency=medium
 
   * New upstream bugfix release.
