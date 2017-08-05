@@ -17,6 +17,7 @@ Depends:
  python3-gi,
  ${misc:Depends},
  ${python3:Depends}
+Recommends: gstreamer1.0-x
 Description: Additional scripts to be used with Voctomix
  A collection of helper scripts for Voctomix, which have not been included
  in Voctomix itself.
