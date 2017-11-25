@@ -4,11 +4,17 @@ voctomix-outcasts (0.5.0-1) unstable; urgency=medium
     - .ts videos are now ingestible (and loopable).
     - New command: votolight for running tally-lights.
   * Update copyright.
-  * Bump Standards-Version to 4.1.1, no changes needed.
   * Declare Rules-Requires-Root: no
   * Use dpkg's pkg-info.mk to parse debian/changelog.
 
  -- Stefano Rivera <stefanor@debian.org>  Sat, 25 Nov 2017 15:01:46 +0000
+
+voctomix-outcasts (0.4.2-2) unstable; urgency=medium
+
+  * Bump standards version to 4.1.1, no changes needed.
+  * Bump debian/compat to 10 and build-depend on debhelper >= 10.2.5~.
+
+ -- Holger Levsen <holger@debian.org>  Sun, 01 Oct 2017 23:45:29 +0200
 
 voctomix-outcasts (0.4.2-1) unstable; urgency=medium
 
