@@ -6,6 +6,7 @@ voctomix-outcasts (0.5.0-1) UNRELEASED; urgency=medium
   * Update copyright.
   * Bump Standards-Version to 4.1.1, no changes needed.
   * Declare Rules-Requires-Root: no
+  * Use dpkg's pkg-info.mk to parse debian/changelog.
 
  -- Stefano Rivera <stefanor@debian.org>  Sat, 25 Nov 2017 10:34:02 +0000
 
