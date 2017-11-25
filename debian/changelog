@@ -1,3 +1,11 @@
+voctomix-outcasts (0.5.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+    - .ts videos are now ingestible (and loopable).
+    - New command: votolight for running tally-lights.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 25 Nov 2017 10:34:02 +0000
+
 voctomix-outcasts (0.4.2-1) unstable; urgency=medium
 
   * New upstream bugfix release.
