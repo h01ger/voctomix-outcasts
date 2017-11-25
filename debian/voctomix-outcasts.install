@@ -4,3 +4,4 @@ ingest.py /usr/share/voctomix-outcasts/
 lib/ /usr/share/voctomix-outcasts/
 record-mixed-av.sh /usr/share/voctomix-outcasts/
 record-timestamp.sh /usr/share/voctomix-outcasts/
+voctolight.py /usr/share/voctomix-outcasts/
