@@ -1,4 +1,4 @@
-voctomix-outcasts (0.5.0-1) UNRELEASED; urgency=medium
+voctomix-outcasts (0.5.0-1) unstable; urgency=medium
 
   * New upstream release.
     - .ts videos are now ingestible (and loopable).
@@ -8,7 +8,7 @@ voctomix-outcasts (0.5.0-1) UNRELEASED; urgency=medium
   * Declare Rules-Requires-Root: no
   * Use dpkg's pkg-info.mk to parse debian/changelog.
 
- -- Stefano Rivera <stefanor@debian.org>  Sat, 25 Nov 2017 10:34:02 +0000
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 25 Nov 2017 15:01:46 +0000
 
 voctomix-outcasts (0.4.2-1) unstable; urgency=medium
 
