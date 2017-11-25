@@ -1,9 +1,9 @@
-voctomix-outcasts (0.5.0-2) UNRELEASED; urgency=medium
+voctomix-outcasts (0.5.0-2) unstable; urgency=medium
 
   * Re-upload 0.5.0-1, including 0.4.2-2's changes.
     - Oops, I checked the wrong remote and missed Holger's upload.
 
- -- Stefano Rivera <stefanor@debian.org>  Sat, 25 Nov 2017 15:14:32 +0000
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 25 Nov 2017 15:17:13 +0000
 
 voctomix-outcasts (0.5.0-1) unstable; urgency=medium
 
