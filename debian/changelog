@@ -1,3 +1,9 @@
+voctomix-outcasts (0.5.0-3) UNRELEASED; urgency=medium
+
+  * Fix typo in 0.5.0-1 changelog entry.
+
+ -- Holger Levsen <holger@debian.org>  Sun, 26 Nov 2017 19:38:38 +0000
+
 voctomix-outcasts (0.5.0-2) unstable; urgency=medium
 
   * Re-upload 0.5.0-1, including 0.4.2-2's changes.
@@ -9,7 +15,7 @@ voctomix-outcasts (0.5.0-1) unstable; urgency=medium
 
   * New upstream release.
     - .ts videos are now ingestible (and loopable).
-    - New command: votolight for running tally-lights.
+    - New command: voctolight for running tally-lights.
   * Update copyright.
   * Declare Rules-Requires-Root: no
   * Use dpkg's pkg-info.mk to parse debian/changelog.
