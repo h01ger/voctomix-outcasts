@@ -1,3 +1,9 @@
+voctomix-outcasts (0.5.0-2~bpo9+1) stretch-backports; urgency=medium
+
+  * Rebuild for stretch-backports, no changes needed.
+
+ -- Holger Levsen <holger@debian.org>  Sun, 03 Dec 2017 00:25:25 +0000
+
 voctomix-outcasts (0.5.0-2) unstable; urgency=medium
 
   * Re-upload 0.5.0-1, including 0.4.2-2's changes.
