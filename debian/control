@@ -1,8 +1,7 @@
 Source: voctomix-outcasts
 Section: video
 Priority: optional
-Maintainer: Holger Levsen <holger@debian.org>
-Uploaders: Stefano Rivera <stefanor@debian.org>
+Maintainer: Stefano Rivera <stefanor@debian.org>
 Build-Depends: debhelper (>=10.2.5~), dh-python, python3
 Standards-Version: 4.1.5
 Homepage: https://github.com/CarlFK/voctomix-outcasts
