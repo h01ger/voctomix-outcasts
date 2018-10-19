@@ -1,6 +1,7 @@
 voctomix-outcasts (0.5.0-5) UNRELEASED; urgency=medium
 
   * Bump standards version to 4.2.1, no changes needed.
+  * Bump debian/compat to 11 and build-depend on debhelper >= 11.
 
  -- Holger Levsen <holger@debian.org>  Sun, 08 Jul 2018 13:36:42 +0000
 
