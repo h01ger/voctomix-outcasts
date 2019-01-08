@@ -5,6 +5,7 @@ voctomix-outcasts (0.6.0-1) UNRELEASED; urgency=medium
   * d/copyright:
     - fix global-files-wildcard-not-first-paragraph-in-dep5-copyright lintian
       warning.
+    - update copyright years.
 
  -- Holger Levsen <holger@debian.org>  Tue, 08 Jan 2019 14:52:52 +0100
 
