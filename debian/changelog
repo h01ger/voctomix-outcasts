@@ -1,6 +1,9 @@
 voctomix-outcasts (0.5.0-6) UNRELEASED; urgency=medium
 
   * Bump standards version to 4.3.0, no changes needed.
+  * d/copyright:
+    - fix global-files-wildcard-not-first-paragraph-in-dep5-copyright lintian
+      warning.
 
  -- Holger Levsen <holger@debian.org>  Tue, 08 Jan 2019 14:52:52 +0100
 
