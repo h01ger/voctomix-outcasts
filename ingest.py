@@ -41,7 +41,10 @@ from lib.connection import Connection
 def mk_video_src(args, videocaps):
     # make video source part of pipeline
 
-    d = {'attribs': args.video_attribs}
+    d = {
+            'attribs': args.video_attribs,
+            'videocaps': videocaps,
+            }
 
     if args.monitor:
         if args.debug:
@@ -62,7 +65,7 @@ def mk_video_src(args, videocaps):
         queue max-size-time=4000000000 !
         dvdec !
                 {monitor}
-        deinterlace mode=1 !
+        deinterlace mode=interlaced !
         videoconvert !
         videorate !
         videoscale !
@@ -75,7 +78,7 @@ def mk_video_src(args, videocaps):
         queue max-size-time=4000000000 !
         decodebin !
                 {monitor}
-        deinterlace mode=1 !
+        deinterlace mode=interlaced !
         videorate !
         videoscale !
         videoconvert !
@@ -96,6 +99,7 @@ def mk_video_src(args, videocaps):
             """
 
     elif args.video_source == 'ximage':
+        # startx=0 starty=0 endx=1919 endy=1079 !
         video_src = """
             ximagesrc {attribs} name=videosrc
                    use-damage=false !
@@ -104,7 +108,6 @@ def mk_video_src(args, videocaps):
                 videorate !
                 videoscale !
             """
-        # startx=0 starty=0 endx=1919 endy=1079 !
 
     elif args.video_source == 'blackmagic':
         video_src = """
@@ -130,17 +133,20 @@ def mk_video_src(args, videocaps):
     elif args.video_source == 'file':
         video_src = """
             multifilesrc {attribs} !
-            decodebin !
-            videoscale !
+            decodebin name=src
+            src. !
                 {monitor}
+            queue !
+            deinterlace mode=interlaced !
             videoconvert !
+            videoscale !
+            videorate !
             """
 
     elif args.video_source == 'test':
 
         # things to render as text ontop of test video
         d['hostname'] = socket.gethostname()
-        d['videocaps'] = videocaps
 
         video_src = """
 videotestsrc name=videosrc {attribs} !
@@ -150,9 +156,21 @@ videotestsrc name=videosrc {attribs} !
     {monitor}
             """
 
+    elif args.video_source == 'spacescope':
+        # Stereo visualizer
+        # pair up with test beep for a handy AV sync test.
+        video_src = """
+      audio_tee. ! queue !
+    spacescope shader=none style=lines {attribs} !
+    {monitor}
+    videoconvert !
+    queue !
+            """
+
+    video_src += "{videocaps} !\n"
+
     video_src = video_src.format(**d)
 
-    video_src += videocaps + "!\n"
 
     return video_src
 
@@ -161,7 +179,9 @@ def mk_audio_src(args, audiocaps):
 
     d = {
         'attribs': args.audio_attribs,
-        'base_audio_attribs': 'provide-clock=false slave-method=re-timestamp'
+        'base_audio_attribs':
+            'provide-clock=false slave-method=re-timestamp',
+        'audiocaps': audiocaps,
     }
 
     if args.audio_source in ['dv', 'hdv']:
@@ -172,6 +192,18 @@ def mk_audio_src(args, audiocaps):
                 queue !
                 audioconvert !
                 """
+
+    elif args.audio_source == 'file':
+        # this only works if video is from DV also.
+        # or some gst source that gets demux ed
+        audio_src = """
+        src. !
+                queue !
+                audioconvert !
+                audioresample !
+                audiorate !
+                """
+
 
     elif args.audio_source == 'pulse':
         audio_src = """
@@ -192,11 +224,15 @@ def mk_audio_src(args, audiocaps):
 
     elif args.audio_source == 'test':
         audio_src = """
-            audiotestsrc {attribs} name=audiosrc freq=330 !
+            audiotestsrc wave=ticks freq=330 {attribs} name=audiosrc !
             """
-    audio_src = audio_src.format(**d)
 
-    audio_src += audiocaps + "!\n"
+    audio_src += """
+       {audiocaps} !
+    tee name=audio_tee
+      audio_tee. ! queue !
+      """
+    audio_src = audio_src.format(**d)
 
     return audio_src
 
@@ -211,19 +247,26 @@ def mk_client(core_ip, port):
 
 def mk_pipeline(args, server_caps, core_ip):
 
-    video_src = mk_video_src(args, server_caps['videocaps'])
-    audio_src = mk_audio_src(args, server_caps['audiocaps'])
+    if args.src:
+        src = args.src.format(**server_caps)
+
+    else:
+        video_src = mk_video_src(args, server_caps['videocaps'])
+        audio_src = mk_audio_src(args, server_caps['audiocaps'])
+        src =  """
+            {video_src}
+             mux.
+            {audio_src}
+             mux.
+            matroskamux name=mux !
+        """.format(video_src=video_src, audio_src=audio_src)
 
     client = mk_client(core_ip, args.port)
 
     pipeline = """
-    {video_src}
-     mux.
-    {audio_src}
-     mux.
-            matroskamux name=mux !
+            {src}
     {client}
-    """.format(video_src=video_src, audio_src=audio_src, client=client)
+    """.format(src=src, client=client)
 
     # remove blank lines to make it more human readable
     while "\n\n" in pipeline:
@@ -234,7 +277,7 @@ def mk_pipeline(args, server_caps, core_ip):
     if args.debug:
         gst_cmd = "gst-launch-1.0 {}".format(pipeline)
 
-        # escape the ! because
+        # escape the ! because bash
         # asl2: ! is interpreted as a command history metacharacter
         gst_cmd = gst_cmd.replace("!", " \! ")
 
@@ -362,10 +405,14 @@ def get_args():
             help="get config from server using this id.")
 
     parser.add_argument(
+        '--src', action='store', default='',
+        help="gst source pipeline")
+
+    parser.add_argument(
         '--video-source', action='store',
         choices=[
-            'dv', 'hdv', 'hdmi2usb', 'blackmagic',
-            'ximage', 'png', 'file', 'test'],
+            'dv', 'hdv', 'udp_h264', 'hdmi2usb', 'blackmagic',
+            'ximage', 'png', 'file', 'test', 'spacescope'],
         default='test',
         help="Where to get video from")
 
@@ -381,7 +428,8 @@ def get_args():
 
     parser.add_argument(
         '--audio-source', action='store',
-        choices=['dv', 'alsa', 'pulse', 'blackmagic', 'test'],
+        choices=['dv', 'hdv', 'file',
+            'alsa', 'pulse', 'blackmagic', 'test', ],
         default='test',
         help="Where to get audio from")
 
