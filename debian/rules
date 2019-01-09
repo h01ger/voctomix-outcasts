@@ -23,4 +23,4 @@ new-upstream-version: clean
 	    | sort \
 	    | tar -cJaf "../$(DEB_SOURCE)_$(DEB_VERSION_UPSTREAM).orig.tar.xz" \
 	    -T- --owner=root --group=root --mode=a+rX
-	$(RM) -r "$(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)"
+	rm -r "$(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)"
