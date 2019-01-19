@@ -2,6 +2,7 @@ voctomix-outcasts (0.7.0-1) UNRELEASED; urgency=medium
 
   [ Stefano Rivera ]
   * New upstream release.
+  * Simplify debian/copyright.
 
   [ Holger Levsen ]
   * d/rules: use plain rm instead of $(RM).
