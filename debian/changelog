@@ -4,6 +4,7 @@ voctomix-outcasts (0.7.0-1) UNRELEASED; urgency=medium
   * New upstream release.
   * Simplify debian/copyright.
   * Recommend python3-usb, it's required for TOMU tally lights.
+  * Add a udev rule to allow uaccess to TOMU tally lgihts.
 
   [ Holger Levsen ]
   * d/rules: use plain rm instead of $(RM).
