@@ -1,4 +1,4 @@
-voctomix-outcasts (0.7.0-1) UNRELEASED; urgency=medium
+voctomix-outcasts (0.7.0-1) unstable; urgency=medium
 
   [ Stefano Rivera ]
   * New upstream release.
@@ -9,7 +9,7 @@ voctomix-outcasts (0.7.0-1) UNRELEASED; urgency=medium
   [ Holger Levsen ]
   * d/rules: use plain rm instead of $(RM).
 
- -- Holger Levsen <holger@debian.org>  Wed, 09 Jan 2019 15:14:42 +0100
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 19 Jan 2019 17:03:34 +1300
 
 voctomix-outcasts (0.6.0-1) unstable; urgency=medium
 
